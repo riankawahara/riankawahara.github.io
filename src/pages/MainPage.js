@@ -394,8 +394,6 @@ const Navbar = ({ language, onToggleLanguage, isDarkMode, onToggleDarkMode, show
 
 // Timeline Item Component
 const TimelineItem = ({ item }) => {
-  const { language } = useLanguage();
-
   const logoElement = item.logo && (
     <img
       src={item.logo}
