@@ -224,30 +224,6 @@ const workExperience = [
   },
 ];
 
-// Projects Data
-const projects = [
-  {
-    id: 'ramp',
-    title: { en: 'Ramp', ja: 'Ramp' },
-    tagline: { en: 'Onboard to any codebase in hours, not weeks', ja: '数週間ではなく数時間でどんなコードベースにもオンボード' },
-    description: { en: 'AI-powered developer onboarding with voice-guided code exploration.', ja: 'AIを使った音声ガイド付きコード探索で開発者オンボーディング。' },
-    tech: 'TypeScript, OpenAI API, CLI',
-    link: 'https://rampup.dev/',
-    image: '/images/project/web/ramp.png',
-    status: 'Beta',
-  },
-  {
-    id: 'oboeru',
-    title: { en: 'Oboeru', ja: 'Oboeru' },
-    tagline: { en: 'Collaborative learning powered by spaced repetition', ja: '間隔反復によるコラボ学習' },
-    description: { en: 'Study together with shared flashcard decks and AI-enhanced learning.', ja: '共有フラッシュカードデッキとAI強化学習で一緒に勉強。' },
-    tech: 'React, Electron, OpenAI API',
-    link: 'https://oboeru.ai/',
-    image: '/images/project/web/oboeru.png',
-    status: 'Beta',
-  },
-];
-
 // Hackathon Projects
 const hackathons = [
   {
@@ -515,101 +491,6 @@ const TimelineItem = ({ item }) => {
     </div>
   );
 };
-
-// Project Card Component
-const ProjectCard = ({ project }) => (
-  <a
-    href={project.link}
-    target="_blank"
-    rel="noreferrer"
-    className="project-card-minimal"
-    style={{
-      display: 'flex',
-      alignItems: 'flex-start',
-      gap: '20px',
-      padding: '24px 0',
-      borderBottom: '1px solid var(--border-color)',
-      textDecoration: 'none',
-      color: 'inherit',
-      transition: 'opacity 0.2s ease',
-    }}
-  >
-    <div
-      style={{
-        width: '48px',
-        height: '48px',
-        borderRadius: '12px',
-        backgroundColor: 'var(--bg-secondary)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexShrink: 0,
-        overflow: 'hidden',
-      }}
-    >
-      {project.image && (
-        <img
-          src={project.image}
-          alt={project.title.en}
-          style={{ width: '28px', height: '28px', objectFit: 'contain' }}
-        />
-      )}
-    </div>
-    <div style={{ flex: 1, minWidth: 0 }}>
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px' }}>
-        <div>
-          <h5 style={{
-            fontSize: '18px',
-            fontWeight: 500,
-            color: 'var(--text-primary)',
-            margin: 0,
-            lineHeight: 1.3,
-          }}>
-            <TranslatedText en={project.title.en} ja={project.title.ja} />
-          </h5>
-          <p style={{
-            fontSize: '14px',
-            color: 'var(--text-secondary)',
-            margin: '4px 0 0 0',
-          }}>
-            <TranslatedText en={project.tagline.en} ja={project.tagline.ja} />
-          </p>
-        </div>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          flexShrink: 0,
-        }}>
-          {project.status && (
-            <span style={{
-              fontSize: '12px',
-              fontWeight: 500,
-              color: 'var(--text-tertiary)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-            }}>
-              {project.status}
-            </span>
-          )}
-          <span style={{
-            fontSize: '16px',
-            color: 'var(--text-tertiary)',
-            transition: 'transform 0.2s ease',
-          }}>↗</span>
-        </div>
-      </div>
-      <p style={{
-        fontSize: '14px',
-        color: 'var(--text-secondary)',
-        margin: '12px 0 0 0',
-        lineHeight: 1.6,
-      }}>
-        <TranslatedText en={project.description.en} ja={project.description.ja} />
-      </p>
-    </div>
-  </a>
-);
 
 function MainPage() {
   const [language, setLanguage] = useState('en');
