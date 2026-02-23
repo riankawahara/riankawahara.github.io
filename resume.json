@@ -115,20 +115,6 @@
       "keywords": ["Figma"]
     }
   ],
-  "projects": [
-    {
-      "name": "Ramp",
-      "description": "AI-powered developer onboarding with voice-guided code exploration. Onboard to any codebase in hours, not weeks.",
-      "url": "https://rampup.dev/",
-      "keywords": ["TypeScript", "OpenAI API", "CLI"]
-    },
-    {
-      "name": "Oboeru",
-      "description": "Collaborative learning powered by spaced repetition. Study together with shared flashcard decks and AI-enhanced learning.",
-      "url": "https://oboeru.ai/",
-      "keywords": ["React", "Electron", "OpenAI API"]
-    }
-  ],
   "awards": [
     {
       "title": "Business Award Winner",

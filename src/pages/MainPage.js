@@ -854,22 +854,6 @@ function MainPage() {
           </div>
         </section>
 
-        {/* Projects */}
-        <div className="container"><div className="divider" /></div>
-
-        <section className="section" id="projects" style={{ paddingBottom: 'var(--space-md)' }}>
-          <div className="container">
-            <h2 className="section-heading">
-              <TranslatedText en="Projects" ja="プロジェクト" />
-            </h2>
-            <div>
-              {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
-        </section>
-
         <div className="container"><div className="divider" /></div>
 
         {/* Contact */}
@@ -908,7 +892,6 @@ function MainPage() {
               <ul className="footer-links">
                 <li><a href="#about"><TranslatedText en="About" ja="紹介" /></a></li>
                 <li><a href="#work"><TranslatedText en="Work" ja="職歴" /></a></li>
-                <li><a href="#projects"><TranslatedText en="Projects" ja="プロジェクト" /></a></li>
                 <li><a href={language === 'ja' ? '/resume/resume-ja.pdf' : '/resume/resume.pdf'} target="_blank" rel="noreferrer"><TranslatedText en="Resume" ja="履歴書" /></a></li>
               </ul>
             </div>

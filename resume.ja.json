@@ -115,20 +115,6 @@
       "keywords": ["Figma"]
     }
   ],
-  "projects": [
-    {
-      "name": "Ramp",
-      "description": "AIを使った音声ガイド付きコード探索で開発者オンボーディング。数週間ではなく数時間でどんなコードベースにもオンボード。",
-      "url": "https://rampup.dev/",
-      "keywords": ["TypeScript", "OpenAI API", "CLI"]
-    },
-    {
-      "name": "Oboeru",
-      "description": "間隔反復によるコラボ学習。共有フラッシュカードデッキとAI強化学習で一緒に勉強。",
-      "url": "https://oboeru.ai/",
-      "keywords": ["React", "Electron", "OpenAI API"]
-    }
-  ],
   "awards": [
     {
       "title": "ビジネス賞受賞",
