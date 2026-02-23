@@ -28,13 +28,36 @@
       "position": "Software Engineer / Solution Engineer",
       "url": "https://note.littlehelp.co.jp/n/ne8e8c5b631b4",
       "startDate": "2025-04-01",
-      "summary": "Full-stack development on Little Help Connect SaaS integrating LINE and HubSpot. Core engineer for Lumo.cx, a LINE x Shopify integration product.",
-      "highlights": [
-        "Designed LINE Groups to HubSpot Company sync feature, adopted by 10+ clients",
-        "Core engineer for Lumo.cx: UI architecture and major features with React/Next.js",
-        "Technical representative in 3 business meetings with major US B2C SaaS provider",
-        "Technical support for HubSpot Solutions Partner implementation in Taiwan",
-        "Resolved 10+ cross-team technical questions, accelerating customer onboarding"
+      "summary": "Full-stack development on Little Help Connect SaaS integrating LINE and HubSpot. Also core engineer for Lumo.cx, a new LINE × Shopify integration product.",
+      "highlightGroups": [
+        {
+          "section": "Integration & Sync Architecture (Little Help Connect)",
+          "items": [
+            "Designed and implemented LINE Group → HubSpot Company sync feature, adopted by 10+ clients",
+            "Full-stack development on LINE × HubSpot SaaS integration",
+            "Delivered product demo to Head of Operations at an international education agency in Bangkok, Thailand",
+            "Provided technical support for HubSpot Solutions Partner rollout in Taiwan",
+            "Resolved 10+ cross-team technical issues, accelerating customer onboarding"
+          ]
+        },
+        {
+          "section": "Product & UI Development (Lumo.cx)",
+          "items": [
+            "Built major UI architecture and core features using React / Next.js",
+            "Implemented key user-facing product components across workflow system",
+            "Delivered live product demo to 30+ stakeholders and external partners",
+            "Implemented comment/memo functionality within workflow system for collaboration and context visibility",
+            "Built internal admin tooling supporting multi-tenant operations and system oversight"
+          ]
+        },
+        {
+          "section": "Business & Enterprise Exposure",
+          "items": [
+            "Served as bilingual technical representative in cross-border meetings with major US B2C SaaS provider",
+            "Participated in enterprise-level AI-to-AI integration PoC discussions between large-scale commerce and messaging platforms",
+            "Contributed to architectural planning for integrations between large-scale systems"
+          ]
+        }
       ]
     },
     {

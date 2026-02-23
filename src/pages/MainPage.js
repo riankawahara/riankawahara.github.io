@@ -109,12 +109,35 @@ const workExperience = [
       en: 'Full-stack development on Little Help Connect SaaS integrating LINE and HubSpot. Also core engineer for Lumo.cx, a new LINE × Shopify integration product.',
       ja: 'LINEとHubSpotを統合するLittle Help Connect SaaSでフルスタック開発。また、LINE × Shopify連携の新製品Lumo.cxのコアエンジニア。',
     },
-    highlights: [
-      { en: 'Designed LINE Groups → HubSpot Company sync feature, adopted by 10+ clients', ja: 'LINEグループ→HubSpot会社同期機能を設計、10社以上のクライアントが採用' },
-      { en: 'Core engineer for Lumo.cx: UI architecture and major features with React/Next.js', ja: 'Lumo.cxコアエンジニア：React/Next.jsでUIアーキテクチャと主要機能を担当' },
-      { en: 'Technical representative in 3 business meetings with major US B2C SaaS provider', ja: '米国大手B2C SaaSプロバイダーとの3回のビジネスミーティングで技術代表を担当' },
-      { en: 'Technical support for HubSpot Solutions Partner implementation in Taiwan', ja: '台湾のHubSpot Solutions Partnerの実装プロジェクトで技術サポート' },
-      { en: 'Resolved 10+ cross-team technical questions, accelerating customer onboarding', ja: '10件以上のクロスチーム技術課題を解決し、顧客オンボーディングを加速' },
+    highlightGroups: [
+      {
+        section: { en: 'Integration & Sync Architecture (Little Help Connect)', ja: '連携 & 同期アーキテクチャ（Little Help Connect）' },
+        items: [
+          { en: 'Designed and implemented LINE Group → HubSpot Company sync feature, adopted by 10+ clients', ja: 'LINEグループ→HubSpot会社同期機能を設計・実装、10社以上のクライアントが採用' },
+          { en: 'Full-stack development on LINE × HubSpot SaaS integration', ja: 'LINE × HubSpot SaaS連携のフルスタック開発' },
+          { en: 'Delivered product demo to Head of Operations at an international education agency in Bangkok, Thailand', ja: 'バンコクの国際教育機関のオペレーション責任者に製品デモを実施' },
+          { en: 'Provided technical support for HubSpot Solutions Partner rollout in Taiwan', ja: '台湾のHubSpot Solutions Partnerのロールアウトで技術サポートを提供' },
+          { en: 'Resolved 10+ cross-team technical issues, accelerating customer onboarding', ja: '10件以上のクロスチーム技術課題を解決し、顧客オンボーディングを加速' },
+        ],
+      },
+      {
+        section: { en: 'Product & UI Development (Lumo.cx)', ja: 'プロダクト & UI開発（Lumo.cx）' },
+        items: [
+          { en: 'Built major UI architecture and core features using React / Next.js', ja: 'React / Next.jsを使用して主要UIアーキテクチャとコア機能を構築' },
+          { en: 'Implemented key user-facing product components across workflow system', ja: 'ワークフローシステム全体の主要なユーザー向け製品コンポーネントを実装' },
+          { en: 'Delivered live product demo to 30+ stakeholders and external partners', ja: 'ライブ製品デモを30名以上のステークホルダーと外部パートナーに実施' },
+          { en: 'Implemented comment/memo functionality within workflow system for collaboration and context visibility', ja: 'コラボレーションとコンテキストの可視化のため、ワークフローシステム内にコメント・メモ機能を実装' },
+          { en: 'Built internal admin tooling supporting multi-tenant operations and system oversight', ja: 'マルチテナント運用とシステム監視をサポートする内部管理ツールを構築' },
+        ],
+      },
+      {
+        section: { en: 'Business & Enterprise Exposure', ja: 'ビジネス & エンタープライズ経験' },
+        items: [
+          { en: 'Served as bilingual technical representative in cross-border meetings with major US B2C SaaS provider', ja: '米国大手B2C SaaSプロバイダーとの越境ミーティングでバイリンガル技術代表を担当' },
+          { en: 'Participated in enterprise-level AI-to-AI integration PoC discussions between large-scale commerce and messaging platforms', ja: '大規模コマースとメッセージングプラットフォーム間のエンタープライズレベルAI-to-AI連携PoC議論に参加' },
+          { en: 'Contributed to architectural planning for integrations between large-scale systems', ja: '大規模システム間の連携のアーキテクチャ計画に貢献' },
+        ],
+      },
     ],
     techStack: [
       { icon: 'devicon-react-original', name: 'React' },
@@ -405,7 +428,19 @@ const TimelineItem = ({ item }) => {
           </p>
           <div className="notion-timeline-content">
             <p><TranslatedText en={item.description.en} ja={item.description.ja} /></p>
-            {item.highlights && (
+            {item.highlightGroups && item.highlightGroups.map((group, gi) => (
+              <div key={gi} style={{ marginTop: gi === 0 ? 'var(--space-sm)' : 'var(--space-md)' }}>
+                <p style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: '4px' }}>
+                  <TranslatedText en={group.section.en} ja={group.section.ja} />
+                </p>
+                <ul>
+                  {group.items.map((h, i) => (
+                    <li key={i}><TranslatedText en={h.en} ja={h.ja} /></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            {item.highlights && !item.highlightGroups && (
               <ul>
                 {item.highlights.map((h, i) => (
                   <li key={i}><TranslatedText en={h.en} ja={h.ja} /></li>

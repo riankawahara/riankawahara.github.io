@@ -15,7 +15,15 @@ function renderHtml(r) {
 
   const work = (r.work || []).map(w => {
     const dates = [w.startDate?.slice(0, 7), w.endDate?.slice(0, 7) || 'Present'].join(' – ');
-    const highlights = (w.highlights || []).map(h => `<li>${h}</li>`).join('');
+    let highlightsHtml = '';
+    if (w.highlightGroups) {
+      highlightsHtml = w.highlightGroups.map(g => {
+        const items = g.items.map(h => `<li>${h}</li>`).join('');
+        return `<div class="highlight-group"><strong class="group-label">${g.section}</strong><ul>${items}</ul></div>`;
+      }).join('');
+    } else if (w.highlights) {
+      highlightsHtml = `<ul>${w.highlights.map(h => `<li>${h}</li>`).join('')}</ul>`;
+    }
     return `
       <div class="entry">
         <div class="entry-header">
@@ -25,7 +33,7 @@ function renderHtml(r) {
           <div class="date">${dates}</div>
         </div>
         ${w.summary ? `<p class="summary">${w.summary}</p>` : ''}
-        ${highlights ? `<ul>${highlights}</ul>` : ''}
+        ${highlightsHtml}
       </div>`;
   }).join('');
 
@@ -98,6 +106,10 @@ function renderHtml(r) {
   .date { font-size: 10px; color: #555; white-space: nowrap; flex-shrink: 0; }
   .muted { color: #555; }
   .summary { font-size: 10.5px; color: #333; margin: 2px 0 3px 0; }
+
+  /* Highlight Groups */
+  .highlight-group { margin-top: 4px; }
+  .group-label { font-size: 10px; color: #555; font-weight: 600; display: block; margin-bottom: 1px; }
 
   /* Lists */
   ul { margin: 2px 0 0 14px; padding: 0; }
