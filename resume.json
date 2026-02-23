@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Rian Kawahara",
+    "label": "Software Engineer",
+    "url": "https://riankawahara.github.io",
+    "summary": "Software engineer based in Tokyo, building SaaS products and integrations. Monash University graduate. Full-stack development with React, TypeScript, Kotlin, and Python. Experience with CRM integrations (HubSpot, LINE) and AI-powered tools.",
+    "location": {
+      "city": "Tokyo",
+      "countryCode": "JP"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "riankawahara",
+        "url": "https://github.com/riankawahara"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "rian-barrett-40a090261",
+        "url": "https://www.linkedin.com/in/rian-barrett-40a090261/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Little Help Agency LLC",
+      "position": "Software Engineer / Solution Engineer",
+      "url": "https://note.littlehelp.co.jp/n/ne8e8c5b631b4",
+      "startDate": "2025-04-01",
+      "summary": "Full-stack development on Little Help Connect SaaS integrating LINE and HubSpot. Core engineer for Lumo.cx, a LINE x Shopify integration product.",
+      "highlights": [
+        "Designed LINE Groups to HubSpot Company sync feature, adopted by 10+ clients",
+        "Core engineer for Lumo.cx: UI architecture and major features with React/Next.js",
+        "Technical representative in 3 business meetings with major US B2C SaaS provider",
+        "Technical support for HubSpot Solutions Partner implementation in Taiwan",
+        "Resolved 10+ cross-team technical questions, accelerating customer onboarding"
+      ]
+    },
+    {
+      "name": "Little Help Agency LLC",
+      "position": "Software Engineer Intern",
+      "url": "https://note.littlehelp.co.jp/n/ne8e8c5b631b4",
+      "startDate": "2025-03-01",
+      "endDate": "2025-04-01",
+      "summary": "Proof-of-concept application exploring upsell timing based on user sign-ups and early interaction signals. Integrated with HubSpot for contact management.",
+      "highlights": [
+        "Implemented HubSpot contact creation/updates based on user sign-ups and profile changes",
+        "Developed flows to capture early user activity for upsell timing models",
+        "Built React components for displaying user information and interaction events",
+        "Implemented Kotlin services with PostgreSQL for persistence and HubSpot sync",
+        "Participated in design discussions to validate upsell concept feasibility"
+      ]
+    },
+    {
+      "name": "MEJORA Corporation",
+      "position": "Software Engineer Intern",
+      "url": "https://mejora.co.jp/",
+      "startDate": "2024-04-01",
+      "endDate": "2024-08-31",
+      "summary": "Worked directly under the CEO in a 4-person engineering team. Contributed to product direction, technical research, and feature implementation for AI-driven applications.",
+      "highlights": [
+        "Led implementation of AI-powered survey creation app using OpenAI API",
+        "Proposed product directions based on technical evaluations and data analysis",
+        "Conducted market research using Selenium and Hugging Face models",
+        "Analyzed datasets with Python/pandas to support product decisions",
+        "Created UI/UX mockups in Figma for stakeholder demos"
+      ]
+    },
+    {
+      "name": "Diamondhead Corporation",
+      "position": "Software Engineer Intern",
+      "url": "https://diamondhead.jp/",
+      "startDate": "2023-12-01",
+      "endDate": "2024-02-28",
+      "summary": "Feature Improvement Team (10 members) for a centralized e-commerce management SaaS managing product listings across Amazon, ZOZOTOWN, and other platforms.",
+      "highlights": [
+        "Enhanced word-count feature to support two input modes with improved accuracy",
+        "Updated user account modification flow to reflect changes instantly",
+        "Redesigned product image positioning settings with configurable options",
+        "Wrote test specifications and reviewed teammates' code before release"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Monash University",
+      "area": "Computer Science",
+      "studyType": "Bachelor"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3"]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Kotlin", "Python", "Node.js", "Django"]
+    },
+    {
+      "name": "Data & Infrastructure",
+      "keywords": ["PostgreSQL", "Firebase", "Docker", "GCP"]
+    },
+    {
+      "name": "Platforms & Integrations",
+      "keywords": ["HubSpot", "LINE", "Shopify", "OpenAI API"]
+    },
+    {
+      "name": "Mobile",
+      "keywords": ["Swift"]
+    },
+    {
+      "name": "Design",
+      "keywords": ["Figma"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ramp",
+      "description": "AI-powered developer onboarding with voice-guided code exploration. Onboard to any codebase in hours, not weeks.",
+      "url": "https://rampup.dev/",
+      "keywords": ["TypeScript", "OpenAI API", "CLI"]
+    },
+    {
+      "name": "Oboeru",
+      "description": "Collaborative learning powered by spaced repetition. Study together with shared flashcard decks and AI-enhanced learning.",
+      "url": "https://oboeru.ai/",
+      "keywords": ["React", "Electron", "OpenAI API"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Business Award Winner",
+      "date": "2024",
+      "awarder": "Tokyo Open Data Hackathon 2024",
+      "summary": "Carbon credit acquisition support service using generative AI"
+    }
+  ]
+}

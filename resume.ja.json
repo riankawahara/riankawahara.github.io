@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "河原理安",
+    "label": "ソフトウェアエンジニア",
+    "url": "https://riankawahara.github.io",
+    "summary": "東京を拠点にSaaS製品やインテグレーションを開発するソフトウェアエンジニア。モナッシュ大学卒業。React、TypeScript、Kotlin、Pythonによるフルスタック開発。HubSpot・LINE等のCRM連携やAIツールの開発経験あり。",
+    "location": {
+      "city": "東京",
+      "countryCode": "JP"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "riankawahara",
+        "url": "https://github.com/riankawahara"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "rian-barrett-40a090261",
+        "url": "https://www.linkedin.com/in/rian-barrett-40a090261/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Little Help Agency LLC",
+      "position": "ソフトウェアエンジニア / ソリューションエンジニア",
+      "url": "https://note.littlehelp.co.jp/n/ne8e8c5b631b4",
+      "startDate": "2025-04-01",
+      "summary": "LINEとHubSpotを統合するLittle Help Connect SaaSでフルスタック開発。また、LINE × Shopify連携の新製品Lumo.cxのコアエンジニア。",
+      "highlights": [
+        "LINEグループ→HubSpot会社同期機能を設計、10社以上のクライアントが採用",
+        "Lumo.cxコアエンジニア：React/Next.jsでUIアーキテクチャと主要機能を担当",
+        "米国大手B2C SaaSプロバイダーとの3回のビジネスミーティングで技術代表を担当",
+        "台湾のHubSpot Solutions Partnerの実装プロジェクトで技術サポート",
+        "10件以上のクロスチーム技術課題を解決し、顧客オンボーディングを加速"
+      ]
+    },
+    {
+      "name": "Little Help Agency LLC",
+      "position": "ソフトウェアエンジニアインターン",
+      "url": "https://note.littlehelp.co.jp/n/ne8e8c5b631b4",
+      "startDate": "2025-03-01",
+      "endDate": "2025-04-01",
+      "summary": "ユーザー登録と初期のインタラクションシグナルに基づくアップセルタイミングを探るPoCアプリケーションを開発。HubSpotとコンタクト管理で連携。",
+      "highlights": [
+        "ユーザー登録とプロフィール変更に基づくHubSpotコンタクトの作成・更新を実装",
+        "アップセルタイミングモデル用の初期ユーザーアクティビティ取得フローを開発",
+        "ユーザー情報とインタラクションイベント表示用のReactコンポーネントを構築",
+        "PostgreSQLとHubSpot同期のためのKotlinサービスを実装",
+        "アップセルコンセプトの実現可能性を検証する設計議論に参加"
+      ]
+    },
+    {
+      "name": "MEJORA株式会社",
+      "position": "ソフトウェアエンジニアインターン",
+      "url": "https://mejora.co.jp/",
+      "startDate": "2024-04-01",
+      "endDate": "2024-08-31",
+      "summary": "4人のエンジニアリングチームでCEOの直接指導の下、フラットな組織構造で働く。AI駆動アプリケーションの製品方針、技術調査、機能実装に貢献。",
+      "highlights": [
+        "OpenAI APIを使用したAIアンケート作成アプリの実装を主導",
+        "技術評価とデータ分析に基づく製品方針を提案",
+        "SeleniumとHugging Faceモデルを使用して市場調査を実施",
+        "Python/pandasでデータセットを分析し、製品意思決定を支援",
+        "ステークホルダーデモ用のUI/UXモックアップをFigmaで作成"
+      ]
+    },
+    {
+      "name": "ダイヤモンドヘッド株式会社",
+      "position": "ソフトウェアエンジニアインターン",
+      "url": "https://diamondhead.jp/",
+      "startDate": "2023-12-01",
+      "endDate": "2024-02-28",
+      "summary": "複数のプラットフォーム（Amazon、ZOZOTOWNなど）での商品掲載を管理する集中型EC管理SaaSの機能改善チーム（10名）に所属。",
+      "highlights": [
+        "2つの入力モードに対応した文字数カウント機能を改善し、精度を向上",
+        "ユーザーアカウント変更フローを更新し、変更を即時反映",
+        "商品画像配置設定を再設計し、設定可能なオプションを追加",
+        "テスト仕様書を作成し、リリース前にチームメイトのコードをレビュー"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "モナッシュ大学",
+      "area": "コンピュータサイエンス",
+      "studyType": "学士"
+    }
+  ],
+  "skills": [
+    {
+      "name": "フロントエンド",
+      "keywords": ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3"]
+    },
+    {
+      "name": "バックエンド",
+      "keywords": ["Kotlin", "Python", "Node.js", "Django"]
+    },
+    {
+      "name": "データ & インフラ",
+      "keywords": ["PostgreSQL", "Firebase", "Docker", "GCP"]
+    },
+    {
+      "name": "プラットフォーム & 連携",
+      "keywords": ["HubSpot", "LINE", "Shopify", "OpenAI API"]
+    },
+    {
+      "name": "モバイル",
+      "keywords": ["Swift"]
+    },
+    {
+      "name": "デザイン",
+      "keywords": ["Figma"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ramp",
+      "description": "AIを使った音声ガイド付きコード探索で開発者オンボーディング。数週間ではなく数時間でどんなコードベースにもオンボード。",
+      "url": "https://rampup.dev/",
+      "keywords": ["TypeScript", "OpenAI API", "CLI"]
+    },
+    {
+      "name": "Oboeru",
+      "description": "間隔反復によるコラボ学習。共有フラッシュカードデッキとAI強化学習で一緒に勉強。",
+      "url": "https://oboeru.ai/",
+      "keywords": ["React", "Electron", "OpenAI API"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "ビジネス賞受賞",
+      "date": "2024",
+      "awarder": "都知事杯オープンデータ・ハッカソン2024",
+      "summary": "生成AIを使用したカーボンクレジット獲得支援サービス"
+    }
+  ]
+}

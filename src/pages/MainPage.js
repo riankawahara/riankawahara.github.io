@@ -881,9 +881,9 @@ function MainPage() {
               <TranslatedText en="Get in Touch" ja="連絡先" />
             </h2>
             <div style={{ display: 'flex', gap: 'var(--space-md)', flexWrap: 'wrap' }}>
-              {/* <a href="mailto:rbar0032@student.monash.edu" className="btn btn-primary">
-                Email Me
-              </a> */}
+              <a href={language === 'ja' ? '/resume/resume-ja.pdf' : '/resume/resume.pdf'} target="_blank" rel="noreferrer" className="btn btn-primary">
+                <TranslatedText en="Resume" ja="履歴書" />
+              </a>
               <a href="https://github.com/riankawahara" target="_blank" rel="noreferrer" className="btn btn-secondary">
                 GitHub
               </a>
@@ -911,6 +911,7 @@ function MainPage() {
                 <li><a href="#about"><TranslatedText en="About" ja="紹介" /></a></li>
                 <li><a href="#work"><TranslatedText en="Work" ja="職歴" /></a></li>
                 <li><a href="#projects"><TranslatedText en="Projects" ja="プロジェクト" /></a></li>
+                <li><a href={language === 'ja' ? '/resume/resume-ja.pdf' : '/resume/resume.pdf'} target="_blank" rel="noreferrer"><TranslatedText en="Resume" ja="履歴書" /></a></li>
               </ul>
             </div>
             <div className="footer-section">

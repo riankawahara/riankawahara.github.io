@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "generate-resume": "node scripts/generate-resume-pdf.mjs",
+    "predeploy": "npm run generate-resume && npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -42,6 +43,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "jsonresume-theme-even": "^0.26.1",
+    "puppeteer": "^24.37.5",
+    "resumed": "^6.1.0"
   }
 }
