@@ -8,7 +8,10 @@ const resumes = [
   { input: 'resume.ja.json', output: 'public/resume/resume-ja.pdf' },
 ];
 
-const browser = await puppeteer.launch({ headless: true });
+const browser = await puppeteer.launch({
+  headless: true,
+  args: process.env.CI ? ['--no-sandbox', '--disable-setuid-sandbox'] : [],
+});
 
 for (const { input, output } of resumes) {
   const resume = JSON.parse(await readFile(input, 'utf-8'));
