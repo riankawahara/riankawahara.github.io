@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 400,
+  "width": "container",
+
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "js/ne_10m_admin_1_states_provinces.topojson", 
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "transform": [
+        { 
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/Japan_life_expectancy5.csv"        ,
+              "format": {"type": "csv", "parse": {"Prefecture": "string", "happiness_ranking": "number"}}
+            },
+            "key": "Prefecture",
+            "fields": ["happiness_ranking"]
+          } 
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "encoding": {
+        "color": {
+          "field": "happiness_ranking",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [47, 1], "range": ["#FFEBEE", "#B71C1C"]},
+          "legend":{"orient": "none", "legendX":10, "legendY":5},
+
+          "title": "Happiness Ranking"
+        },
+    
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Prefecture"},
+          {"field": "happiness_ranking", "type": "quantitative",  "title": "Happiness Ranking"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "js/ne_110m_graticules_5.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    }
+  ],
+  "config": {}
+}

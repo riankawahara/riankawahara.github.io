@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "width": "container",
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "js/ne_10m_admin_1_states_provinces.topojson", 
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "transform": [
+        { 
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/Japan_life_expectancy5.csv"        ,
+              "format": {"type": "csv", "parse": {"Prefecture": "string", "Region": "string"}}
+            },
+            "key": "Prefecture",
+            "fields": ["Region"]
+          } 
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "encoding": {
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Chubu",
+              "Chugoku",
+              "Hokkaido",
+              "Kansai",
+              "Kanto",
+              "Kyushu",
+              "Okinawa",
+              "Shikoku",
+              "Tohoku"
+            ],
+            "range": [
+              "#a6cee3",
+              "#1f78b4",
+              "#b2df8a",
+              "#33a02c",
+              "#fb9a99",
+              "#e31a1c",
+              "#fdbf6f",
+              "#ff7f00",
+              "#cab2d6"
+            ]
+          },
+          "legend":{"orient": "none", "legendX":10, "legendY":5}
+        },
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Prefecture"},
+          {"field": "Region", "type": "nominal",  "title": "Region"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "js/ne_110m_graticules_5.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    }
+  ],
+  "config": {}
+}

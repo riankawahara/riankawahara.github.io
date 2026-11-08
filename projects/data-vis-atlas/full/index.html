@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Japanese Prefecture Happiness Analysis</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="css/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> -->
+
+  <!-- CSS file -->
+  <link rel="stylesheet"  href="css/styles.css" >
+</head>
+
+<body>
+  <div class="background-image-container">
+    <div class="page">
+      <!-- pure grid group -->
+      <div class="title_container">
+        <div class="pure-u-1-1">
+            <h1 class = "title"><b>Japanese Prefecture Happiness Analysis</b></h1>
+            <p class="styled-paragraph under_title">In 2020, a Happiness Ranking survey was conducted in Japan. This visualisation explores the aspects that could contribute to the Happiness Rankings in order to see what can be improved to increase Happiness.</p>
+
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+
+      <!-- pure grid group RANKING-->
+      <div class="pure-g">
+        <div class="pure-u-1 center_chunk">
+          <div class="description text_center_container">
+            <h2 class = "centered-text">Japanese Prefecture Happiness Ranking 1 ~ 47 in 2020</h2>
+          </div>
+        <div class="pure-u-1 container">
+          <div id="happiness_ranking" class="center_vis vis-container "></div>
+          <!-- <div id="vis1" class="vis-container"></div> -->
+        </div>
+        <p class="styled-paragraph under_title">
+          The Happiness Ranking survey presents that prefectures such as <b>Fukui (1)</b>, <b>Toyama (2)</b>, <b>Tokyo (3)</b>, <b>Ishikawa (4)</b> and <b>Nagano (5)</b> have the top five happiness rankings, 
+          while the prefectures <b>Kochi (47)</b>, <b>Osaka (46)</b>, <b>Okinawa (45)</b>, <b>Aomori (44)</b> and <b>Nagasaki (43)</b> have the lowest five happiness rankings.
+
+        </p>
+
+      </div>
+      <!-- end pure grid group -->
+
+      <!-- pure grid group  CRIME  -->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2>Top 5 Prefectures for Crime Rates per 100,000 people</h2>
+            <p>In this bar chart it can be observed that <b>Osaka (46)</b> has the highest crime rate per 100,000 people. <br><br>
+            This fact could connect to Osakas low Hapiness Ranking.
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="crime" class="vis-container"></div>
+
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+      <!-- pure grid group WELFARE RATE -->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2>Welfare Support Rate</h2>
+            <p>In this Map it can be be that the Welfare Support Rate is quite high for prefectures with low Happiness Rankings such as  <b>Kochi (47)</b>, <b>Osaka (46)</b>, <b>Okinawa (45)</b>, <b>Aomori (44)</b> and <b>Nagasaki (43)</b>  </p>
+              <br>
+              However it may not be the strongest factor that contributes to happiness but perhaps a side factor.
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="welfare" class="vis-container"></div>
+
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+            <!-- pure grid group AVERAGE TEMP-->
+            <div class="pure-g">
+              <div class="pure-u-1-2">
+                <div class="description description-left">
+                  <h2>Annual Average Temperature</h2>
+                  <p>It can be see in this idiom that the for prefectures that face more extreme temperatures on both ends but primarily on the hotter tend to have lower Happiness Ranking.
+
+                    <br><br>
+
+                    The hotter annual average temperature is depicted in orange and the coolor temperature in blue.
+
+                  </p>
+                </div>
+              </div>
+              <div class="pure-u-1-2">
+                <div id="average_temp" class="vis-container"></div>
+      
+              </div>
+            </div>
+            <!-- end pure grid group -->
+
+
+            <!-- pure grid group TYPHOON HITS-->
+            <div class="pure-g">
+              <div class="pure-u-1-2">
+                <div class="description description-left">
+                  <h2>Typhoon Hits from 1951 ~ 2022</h2>
+                  <p>From this idiom it can be seen that the prefectures with a lower happiness ranking also experience more Typhoon hits over the past 70 years.
+
+                    <br> <br> 
+
+                    This trend could be related to the hotter weather experienced in these prefectures.
+                  </p>
+                </div>
+              </div>
+              <div class="pure-u-1-2">
+                <div id="typhoon" class="vis-container"></div>
+      
+              </div>
+            </div>
+            <!-- end pure grid group -->
+
+      <!-- pure grid group REGION-->
+      <div class="pure-g">
+        <div class="pure-u-1 center_chunk">
+          <div class="description text_center_container">
+            <h2 class = "centered-text">Japanese Prefectures and Regions</h2>
+          </div>
+        <div class="pure-u-1 container">
+          <div id="region" class="center_vis vis-container "></div>
+          <!-- <div id="vis1" class="vis-container"></div> -->
+        </div>
+        <p class="styled-paragraph under_title"> In Japan there are 47 prefectures and 9 regions. These regions are depicted in the following visualsation and are relevant in interpretting the following visualisation.</p>
+      </div>
+      <!-- end pure grid group -->
+
+
+
+            <!-- pure grid group -->
+            <div class="pure-g">
+              <div class="pure-u-1-2">
+                <div class="description description-left">
+                  <h2>Prefecturewise Income Overview: Average Income, Minimum Wage, Welfare Rate, and Region</h2>
+                  <p>This bubble plot plots the Average Income, Minimum Wage, Welfare Rate to see where the key prefectures stand in terms of their financial wealth. <br><br>
+                    
+                    It can be seen that on average the prefectures with lower happiness rankings have lower average incomes and lower minimum wage while having relatively high number of people on welfare support. </p>
+                </div>
+              </div>
+              <div class="pure-u-1-2">
+                <div id="money" class="vis-container"></div>
+      
+              </div>
+            </div>
+            <!-- end pure grid group --> 
+      
+
+
+
+
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1 center_chunk">
+          <div class="description text_center_container">
+            <h2 class = "centered-text">Conclusion</h2>
+          </div>
+        <div class="pure-u-1 container">
+          <div id="somevis4" class="center_vis vis-container "></div>
+        </div>
+        <p class="styled-paragraph under_title"> While there are certainly multiple number of factors that contribute to a prefecture's Happiness ranking, the aspects viewed today present certain key characteristics found in prefectures that are less happy. These factors include loweer average income, greater Typhoon hits, hotter weather, and higher crime rates. Improvements in these aspects could potentially lead to improving the Happiness ranking of the prefecture. </p>
+      </div>
+      <!-- end pure grid group -->
+
+
+
+      <div class="pure-g">
+        <div class="pure-u-1-1 small-font">
+          <p>This visualisation has used the following data source: 
+            <a href="https://github.com/rbarmon/FIT3179_Data_Visualisation_II/blob/main/data/Japan_life_expectancy5.csv" target="_blank">Link</a>. <br>
+            <p><a href="https://www.freepik.com/free-vector/abstract-memphis-background-with-geometric-shapes_13237370.htm#query=website%20background%20japan&position=9&from_view=search&track=ais">Background Image by s.salvador</a> on Freepik</p>
+              </div>
+      </div>
+
+  </div>
+</div> <!-- end page -->
+
+<script type="text/javascript">
+  var spec4 = "choropleth_map_happiness_ranking.vg.json";
+  vegaEmbed('#happiness_ranking', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+<script type="text/javascript">
+  var spec4 = "simple_bar_chart.vg.json";
+  vegaEmbed('#crime', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+<script type="text/javascript">
+  var spec4 = "choropleth_map_welfare_rate.vg.json";
+  vegaEmbed('#welfare', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+<script type="text/javascript">
+  var spec4 = "choropleth_map_annual_average_temp.vg.json";
+  vegaEmbed('#average_temp', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+<script type="text/javascript">
+  var spec4 = "choropleth_map_typhoon.vg.json";
+  vegaEmbed('#typhoon', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+<script type="text/javascript">
+  var spec4 = "choropleth_map_region.vg.json";
+  vegaEmbed('#region', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+<script type="text/javascript">
+  var spec4 = "bubbleplot_money.vg.json";
+  vegaEmbed('#money', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error); 
+</script>
+
+
+
+</body>
+
+</html>

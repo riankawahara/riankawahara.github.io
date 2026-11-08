@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 500,
+  "width": 500,
+  "title": "Prefecturewise Education Overview: University Graduates, Education Spending, Population, and Region",
+  "data": {
+    "url": "data/japandata.csv"
+  },
+  "mark": "circle",
+  "encoding": {
+  "x": {
+  "field": "University",
+  "type": "quantitative",
+  "title": "Percentage of University/College Graduates"
+  },
+  "y": {
+  "field": "Educ_exp",
+  "type": "quantitative",
+  "title": "Percentage of education expenditure"
+  },
+  "color": {
+  "field": "Region",
+  "type": "nominal"},
+  "size": {
+  "field": "Population",
+  "type": "quantitative"
+  }
+  }
+}

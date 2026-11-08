@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FIT3179 Data Visualisation II</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+</head>
+
+<body>
+  <div class="background-image-container">
+
+  <div class="page">
+ 
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Multiple Visualisations</h1>
+        <p>This page demonstrates how you can use pure.css grid for your layout.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Two Columns Layout</h2>
+          <p>The first column contains text and the second column contains a visualisation.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <!-- <div id="somevis2" class="vis-container"></div> -->
+
+        <!-- <div id="vis1" class="vis-container"></div> -->
+
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>Three Equal Columns</h2>
+          <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat
+            sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <!-- <div id="vis4" class="vis-container"></div> -->
+        <!-- <div id="choropleth_map_1" class="vis-container"></div> -->
+
+      </div>
+      <div class="pure-u-1-3" style="width: 31.5%;">
+        <!-- <div id="vis3" class="vis-container" style="margin-left: 15px;"></div> -->
+        <!-- <div id="somevis2" class="vis-container" style="margin-left: 15px;"></div> -->
+
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <!-- <div id="choropleth_map_1" class="vis-container"></div> -->
+
+        <!-- <div id="vis2" class="vis-container"></div> -->
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-right">
+          <h2>First and Second Columns Combined</h2>
+          <p>The first and second columns are combined. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+            faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://fit3179.github.io/Vega-Lite/" target="_blank">FIT3179
+            Teaching Team</a>. The datasource is <a href="#" target=" _blank">some data repository online</href>.</p>
+          <p><a href="https://www.freepik.com/free-vector/abstract-memphis-background-with-geometric-shapes_13237370.htm#query=website%20background%20japan&position=9&from_view=search&track=ais">Image by s.salvador</a> on Freepik</p>
+            </div>
+    </div>
+
+
+</div>
+</div> <!-- end page -->
+
+<script type="text/javascript">
+    var spec4 = "tryagain.vg.json";
+    vegaEmbed('#somevis2', spec4).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error); 
+  </script>
+  `
+  <script type="text/javascript">
+    var spec3 = "choropleth_map_1.vg.json";
+    vegaEmbed('#choropleth_map_1', spec3).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  
+  <script type="text/javascript">
+    var spec4 = "something.vg.json";
+    vegaEmbed('#some', spec4).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error); 
+  </script>
+  
+  <script type="text/javascript">
+    var spec4 = "somevis.vg.json";
+    vegaEmbed('#somevis', spec4).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error); 
+  </script>
+  
+
+</body>
+
+</html>

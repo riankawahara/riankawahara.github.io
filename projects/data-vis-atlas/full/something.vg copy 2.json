@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 500,
+  "width": 500,
+  "title": "Prefecturewise Education Overview: University Graduates, Education Spending, Population, and Region",
+  "data": {
+    "url": "data/Japan_life_expectancy.csv"
+  },
+
+  "selection": {
+    "region_highlight": {
+    "type": "multi",
+    "fields": ["Region"],
+    "bind": "legend"
+    }
+  },
+
+  "mark": "circle",
+  "encoding": {
+  "x": {
+  "field": "University",
+  "type": "quantitative",
+  "title": "Percentage of University/College Graduates",
+  "axis": {"tickCount": 10},
+  "scale": {"type": "linear", "domain": [10, 35]}
+  },
+  "y": {
+  "field": "Educ_exp",
+  "type": "quantitative",
+  "title": "Percentage of education expenditure",
+  "axis": {"tickCount": 10},
+  "scale": {"type": "linear", "domain": [15, 30]}
+  },
+  "color": {
+  "field": "Region",
+  "type": "nominal"},
+  "size": {
+  "field": "Population",
+  "type": "quantitative",  
+  "scale": {"range": [30, 500]}
+  },
+  "opacity": {
+    "condition": {"selection": "region_highlight", "value": 0.8},
+    "value": 0.2
+  },
+  "tooltip": [
+    {"field": "Prefecture", "type": "nominal"},
+    {"field": "Region", "type": "nominal"},
+    {"field": "Population", "type": "quantitative", "format": ","},
+    {"field": "University", "type": "quantitative", "format": ","},
+    {"field": "Educ_exp", "type": "quantitative", "format": ","}
+    ]
+  }
+}

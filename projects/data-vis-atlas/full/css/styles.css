@@ -1,0 +1,144 @@
+/* Palantir-style minimal: drop the busy textured background, keep monochrome. */
+.background-image-container {
+    background: #fafaf7;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body *{
+    font-family: 'Inter', 'Open Sans', system-ui, -apple-system, sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
+html {
+    background: #fafaf7;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background-color: #fafaf7;
+}
+
+.page {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 40px 48px;
+    padding-top: 28px;
+    border: 1px solid #ececec;
+}
+.styled-paragraph {
+    width: 60%; 
+    margin: 0 auto; 
+    line-height: 1.5; 
+    padding: 10px; 
+    text-align: justify; 
+  }
+.vis-container {
+    width: 100%;
+}
+
+.vis-container2 {
+    width: 100%;
+}
+
+
+.description h2,
+h1 {
+    margin-top: 0px;
+}
+
+.description-right {
+    padding-left: 20px;
+}
+
+.description-left {
+    padding-right: 20px;
+    font-size: 20px;
+
+}
+
+.title_container {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #f5f3f3; 
+    border: 2px solid #000000; 
+    padding: 10px; 
+}
+.title {
+    font-size: 3.4em; 
+    font-weight: bold; 
+    font-family: "Arial", sans-serif; 
+    margin-bottom: 10px; 
+  }
+
+ .under_title {
+    margin-top: 10px;
+    font-size: 20px; 
+  } 
+.pure-g {
+    margin-bottom: 40px;
+}
+
+`
+.annotation_font {
+    font-size: 20px;
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 600px; 
+    margin: 0 auto; 
+
+   }
+  
+.center_vis{
+    max-width: 100%; 
+    height: auto; 
+  }
+
+  .text_center_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-text {
+    text-align: center; 
+    font-size: 30px;
+
+  }
+
+  .center_chunk {
+    margin-bottom: 60px;
+
+
+  }
+
+/* #choropleth_map {
+	top:100px;
+	bottom: 100px; 
+	left: 100px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+} */

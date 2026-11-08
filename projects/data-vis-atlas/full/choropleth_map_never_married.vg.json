@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "title": "Never Married",
+  "projection": {"type": "mercator"},
+  
+
+
+  "layer": [
+    {
+      "data": {
+        "url": "js/ne_10m_admin_1_states_provinces.topojson", 
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "transform": [
+        { 
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/Japan_life_expectancy5.csv"        ,
+              "format": {"type": "csv", "parse": {"Prefecture": "string", "never_married_rate": "number"}}
+            },
+            "key": "Prefecture",
+            "fields": ["never_married_rate"]
+          } 
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "encoding": {
+        "color": {
+          "field": "never_married_rate",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [20, 31], "range": ["#d9f7c1", "#0c421d"]},
+          "title": "Never Married %"
+        },
+    
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Prefecture"},
+          {"field": "never_married_rate", "type": "quantitative",  "title": "Never Married %"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "js/ne_110m_graticules_5.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "width": "container",
+
+  "projection": {"type": "mercator"},
+  
+
+
+  "layer": [
+    {
+      "data": {
+        "url": "js/ne_10m_admin_1_states_provinces.topojson", 
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "transform": [
+        { 
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/Japan_life_expectancy5.csv"        ,
+              "format": {"type": "csv", "parse": {"Prefecture": "string", "typhoon_hits_1951_2022": "number"}}
+            },
+            "key": "Prefecture",
+            "fields": ["typhoon_hits_1951_2022"]
+          } 
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "encoding": {
+        "color": {
+          "field": "typhoon_hits_1951_2022",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [0, 50], "range": ["#D9F7FF", "#0C42B0"]},
+          "legend":{"orient": "none", "legendX":10, "legendY":5},
+          "title": "Typhoon Hits"
+        },
+    
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Prefecture"},
+          {"field": "typhoon_hits_1951_2022", "type": "quantitative",  "title": "Typhoon Hits"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "js/ne_110m_graticules_5.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    }
+  ],
+  "config": {}
+}

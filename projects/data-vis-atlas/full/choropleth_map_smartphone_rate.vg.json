@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "title": "Smartphone Rate",
+  "projection": {"type": "mercator"},
+  
+
+
+  "layer": [
+    {
+      "data": {
+        "url": "js/ne_10m_admin_1_states_provinces.topojson", 
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "transform": [
+        { 
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/Japan_life_expectancy5.csv"        ,
+              "format": {"type": "csv", "parse": {"Prefecture": "string", "smartphone_rate": "number"}}
+            },
+            "key": "Prefecture",
+            "fields": ["smartphone_rate"]
+          } 
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "encoding": {
+        "color": {
+          "field": "smartphone_rate",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [60, 85], "range": ["#d9f7c1", "#0c421d"]},
+          "title": "Smartphone rate"
+        },
+    
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Prefecture"},
+          {"field": "smartphone_rate", "type": "quantitative",  "title": "Smartphone rate"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "js/ne_110m_graticules_5.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    }
+  ]
+}

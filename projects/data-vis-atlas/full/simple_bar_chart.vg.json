@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart about normalized crime rates.",
+  "width":400,
+  "width": "container",
+
+  "data": {
+    "values": [
+      {"Prefecture": "Osaka", "Normalized Crime Rates": 1677.554699}, {"Prefecture": "Tokyo", "Normalized Crime Rates": 1139.83932}, {"Prefecture": "Saitama", "Normalized Crime Rates": 1046.418775},
+      {"Prefecture": "Ibaraki", "Normalized Crime Rates": 1063.896206}, {"Prefecture": "Chiba", "Normalized Crime Rates": 1082.44437}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Prefecture", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "Normalized Crime Rates", "type": "quantitative"},
+    "color": {"field": "Prefecture"}
+  },
+  "config": {}
+}

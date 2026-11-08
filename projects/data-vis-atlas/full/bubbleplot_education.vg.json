@@ -1,0 +1,153 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Prefecturewise Education Overview: University Graduates, Education Spending, Population, and Region",
+    "width": "container",
+    "height": 450,
+    "data": {
+      "url": "data/japandata.csv"
+    },
+
+    "params": [
+        {
+          "name": "Region_selection",
+          "bind": {
+            "input": "select",
+            "options": [
+              null,
+              "Hokkaido",
+              "Tohoku",
+              "Chubu",
+              "Kanto",
+              "Kansai",
+              "Chugoku",
+              "Shikoku",
+              "Kyushu",
+              "Okinawa"
+            ],
+            "labels": [
+              "Show All",
+              "Hokkaido",
+              "Tohoku",
+              "Chubu",
+              "Kanto",
+              "Kansai",
+              "Chugoku",
+              "Shikoku",
+              "Kyushu",
+              "Okinawa"
+            ],
+            "name": "Region Selection: "
+          }
+        }
+      ],
+      "transform": [
+        {
+          "filter": "Region_selection == null || datum.Region == Region_selection"
+        }
+      ],
+
+
+
+    "encoding": {
+        "x": {
+        "field": "University",
+        "type": "quantitative",
+        "title": "Percentage of University/College Graduates",
+        "axis": {"tickCount": 10},
+        "scale": {"type": "linear", "domain": [10, 35]}
+        },
+        "y": {
+        "field": "Educ_exp",
+        "type": "quantitative",
+        "title": "Percentage of education expenditure",
+        "axis": {"tickCount": 10},
+        "scale": {"type": "linear", "domain": [15, 30]}
+        }
+    },
+    "layer": [
+      {
+        "mark": "circle",
+        "encoding": {
+            "size": {
+            "field": "Population",
+            "type": "quantitative",
+            "scale": {"range": [30, 500]},
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "Region",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Chubu",
+                "Chugoku",
+                "Hokkaido",
+                "Kansai",
+                "Kanto",
+                "Kyushu",
+                "Okinawa",
+                "Shikoku",
+                "Tohoku"
+              ],
+              "range": [
+                "#a6cee3",
+                "#1f78b4",
+                "#b2df8a",
+                "#33a02c",
+                "#fb9a99",
+                "#e31a1c",
+                "#fdbf6f",
+                "#ff7f00",
+                "#cab2d6"
+              ]
+            }
+            
+          },
+          "selection": {
+            "region_highlight": {
+            "type": "multi",
+            "fields": ["Region"],
+            "bind": "legend"
+            }
+          },
+          "opacity": {"value": 0.6},
+          "tooltip": [
+            {"field": "Prefecture", "type": "nominal"},
+            {"field": "Region", "type": "nominal"},
+            {"field": "Population", "type": "quantitative", "format": ","},
+            {"field": "University", "type": "quantitative", "format": ","},
+            {"field": "Educ_exp", "type": "quantitative", "format": ","}
+            ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Prefecture", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+                "test": "datum['Prefecture'] == 'Tokyo' || datum['Prefecture'] == 'Kyoto' || datum['Prefecture'] == 'Osaka' || datum['Prefecture'] == 'Kyoto' || datum['Prefecture'] == 'Aomori' || datum['Prefecture'] == 'Okinawa' || datum['Prefecture'] == 'Gunma'",       
+                "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Prefecture", "type": "nominal"},
+            {"field": "Region", "type": "nominal"},
+            {"field": "Population", "type": "quantitative", "format": ","},
+            {"field": "University", "type": "quantitative", "format": ","},
+            {"field": "Educ_exp", "type": "quantitative", "format": ","}
+            ]
+        }
+      }
+    ],
+    "config": {}
+  }
